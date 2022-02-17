@@ -6,16 +6,15 @@ React Xss Scanner
 This scanner for vulnerabilities in React code. (.ts, .tsx, .js, .jsx)
 </p>
 
-
 # Instalation
 
 clone this repository
 
 ```
-$ git clone
+$ git clone https://github.com/Maaaaru/React-XSS-Scanner.git
 ```
 
-Execute
+# Start Scan
 
 ```
 $ python3 main.py
