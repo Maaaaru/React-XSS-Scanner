@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/imgs/logo_react_xss_scanner.png" width="960">
+  <img src="docs/imgs/logo_react_xss_scanner.png" width="800">
 </p>
 
 <h1 align="center">
