@@ -2,7 +2,7 @@ import os
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-exclude_dir = [".git", ".."]
+exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin"]
 target_file = [".js", ".jsx", ".ts", ".tsx"]
 dangerous = ["javascript:", "dangerouslySetInnerHTML(", "eval("]
 
@@ -16,10 +16,13 @@ def scan_file(path):
 
 			scan_result(result, path, line_number)
 
+def is_target_file(file_name):
+	return len(file_name.split(".")) is 2 and os.path.splitext(file_name)[1] in target_file
+
 def scan_dir(path):
 	with os.scandir(path) as list:
 		for item in list:
-			if item.is_file() and os.path.splitext(item.name)[1] in target_file:
+			if item.is_file() and is_target_file(item.name):
 				scan_file(path+"/"+item.name)
 			
 			elif item.is_dir():
