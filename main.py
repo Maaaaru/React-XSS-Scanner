@@ -1,6 +1,6 @@
 
 import os
-import src.util.scan_dir as s
+import src.scan_dir as s
 import src.banner as b
 
 rootPath = "."
