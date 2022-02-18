@@ -2,9 +2,7 @@
   <img src="docs/imgs/logo_react_xss_scanner.png" width="800">
 </p>
 
-<h1 align="center">
-React Xss Scanner
-</h1>
+<h1></h1>
 
 <p align="center">
 This scanner for vulnerabilities in React code. (.ts, .tsx, .js, .jsx)
