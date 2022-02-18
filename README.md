@@ -24,6 +24,7 @@ $ git clone https://github.com/Maaaaru/React-XSS-Scanner.git
 # Start Scan
 
 ```
+$ cd React-XSS-Scanner
 $ python3 main.py
 ```
 
