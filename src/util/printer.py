@@ -6,7 +6,7 @@ def colorized_print(text,color_code):
 	print(color_code + text + end)
 
 
-def output_start_scanning():
+def print_start():
 	colorized_print("[ :: ] Start Scanning ... \n", colors_list.GREEN)
 
 def print_finish():
