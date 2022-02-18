@@ -10,6 +10,12 @@ React Xss Scanner
 This scanner for vulnerabilities in React code. (.ts, .tsx, .js, .jsx)
 </p>
 
+
+![issues](https://img.shields.io/github/issues/Maaaaru/React-XSS-Scanner)
+![forks](https://img.shields.io/github/forks/Maaaaru/React-XSS-Scanner)
+![stars](https://img.shields.io/github/stars/Maaaaru/React-XSS-Scanner)
+![licence](https://img.shields.io/github/license/Maaaaru/React-XSS-Scanner)
+
 # Instalation
 
 clone this repository
