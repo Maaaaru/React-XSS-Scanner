@@ -2,13 +2,13 @@ import os
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin", ".vscode", ".storybook"]
+exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin", ".vscode", ".storybook", "dist"]
 target_file = [".js", ".jsx", ".ts", ".tsx"]
 dangerous = ["javascript:", "dangerouslySetInnerHTML(", "eval("]
 vulnerable_files = []
 
 def scan_file(path):
-	num_of_vulnerable_codes = 0
+	vulnerable_code_line_number = []
 
 	colorized_print("\n >> Scanning " + path, colors_list.WHITE)
 
@@ -18,13 +18,14 @@ def scan_file(path):
 			result = any(s in code for s in dangerous)
 
 			if result:
-				num_of_vulnerable_codes += 1
-				vulnerable_files.append([path, line_number])
+				vulnerable_code_line_number.append(line_number)
 
 				colorized_print("\n  [ ! ] vulnerable code found", colors_list.RED)
 
-	if (num_of_vulnerable_codes is 0):
+	if (len(vulnerable_code_line_number) is 0):
 		colorized_print("\n  [ - ] vulnerable code not found ", colors_list.GREEN)
+	else:
+		return vulnerable_files.append([path,vulnerable_code_line_number])
 
 def is_target_file(file_name):
 	return len(file_name.split(".")) is 2 and os.path.splitext(file_name)[1] in target_file

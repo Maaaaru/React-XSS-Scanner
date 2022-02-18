@@ -32,6 +32,8 @@ def print_scan_result(vulnerable_files):
 
 def print_vulnerable_files_path(vulnerable_files):
 	for i in vulnerable_files:
-		colorized_print("\n       >>> " + i[0] + " at line " + str(i[1]), colors_list.RED)
+		file_path = i[0]
+		for l in i[1]:
+			colorized_print("\n       >>> " + file_path + " at line " + str(l), colors_list.RED)
 
 main()
