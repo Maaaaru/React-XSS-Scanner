@@ -3,7 +3,7 @@
 </p>
 
 <h1 align="center">
-React Xss Scanner
+React XSS Scanner
 </h1>
 
 <p align="center">
@@ -35,4 +35,3 @@ React-XSS-Scanner is licensed under the MIT license. take a look at the [LICENSE
 # Version
 
 Current Version is 1.0.0
-
