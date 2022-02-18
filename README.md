@@ -13,6 +13,10 @@ This scanner for vulnerabilities in React code. (.ts, .tsx, .js, .jsx)
 ![stars](https://img.shields.io/github/stars/Maaaaru/React-XSS-Scanner)
 ![licence](https://img.shields.io/github/license/Maaaaru/React-XSS-Scanner)
 
+# What is this
+This tool scans files for the presence of dangerous functions that can cause XSS.
+
+
 # Instalation
 
 clone this repository
@@ -28,9 +32,10 @@ $ cd React-XSS-Scanner
 $ python3 main.py
 ```
 
-# ※Caution
+# ※ Caution
+The scan results will pick up functions that may cause XSS, so the presence of dangerous code does not necessarily mean that XSS will occur.
 
-coding now....
+Functional accuracy is still being improved.
 
 # Licence
 
