@@ -1,12 +1,14 @@
 
 import os
 import src.scan_dir as s
-import src.banner as b
+from src.banner import output_banner,output_start_scanning
 
 rootPath = "."
 
 def main():
-	b.output_banner()
+	output_banner()
+
+	output_start_scanning()
 
 	s.scan_dir(rootPath)
 
