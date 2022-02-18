@@ -2,17 +2,22 @@ import os
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin"]
+exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin", ".vscode", ".storybook"]
 target_file = [".js", ".jsx", ".ts", ".tsx"]
 dangerous = ["javascript:", "dangerouslySetInnerHTML(", "eval("]
+num_of_dangerous_code = 0
 
 def scan_file(path):
+
 	colorized_print("\n >> Scanning at " + path, colors_list.WHITE)
 
 	with open(path) as f:
 		for line_number, code in enumerate(f, 1):
 
 			result = any(s in code for s in dangerous)
+
+			if result:
+				num_of_dangerous_code + 1
 
 			scan_result(result, path, line_number)
 
@@ -28,6 +33,8 @@ def scan_dir(path):
 			elif item.is_dir():
 				if not item.name in exclude_dir:
 					scan_dir(path+"/"+item.name)
+	
+	colorized_print("Finish" + str(num_of_dangerous_code), colors_list.RED)
 
 def scan_result(is_denger, path, line):
 	if (is_denger):
