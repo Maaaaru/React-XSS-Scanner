@@ -27,3 +27,12 @@ $ python3 main.py
 # ※Caution
 
 coding now....
+
+# Licence
+
+React-XSS-Scanner is licensed under the MIT license. take a look at the [LICENSE](https://github.com/Maaaaru/React-XSS-Scanner/LICENCE) for more information.
+
+# Version
+
+Current Version is 1.0.0
+
