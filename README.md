@@ -30,7 +30,7 @@ coding now....
 
 # Licence
 
-React-XSS-Scanner is licensed under the MIT license. take a look at the [LICENSE](https://github.com/Maaaaru/React-XSS-Scanner/LICENCE) for more information.
+React-XSS-Scanner is licensed under the MIT license. take a look at the [LICENSE](https://github.com/Maaaaru/React-XSS-Scanner/blob/main/LICENSE) for more information.
 
 # Version
 
