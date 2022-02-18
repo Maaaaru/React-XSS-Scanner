@@ -7,7 +7,7 @@ author = "Maaaaru"
 github = "https://github.com/Maaaaru/React-XSS-Scanner"
 version = "v1.0.0"
 
-separation = ">>-----------------------------------------------------------------------------------------------"
+separation = ">> ═════════════════════════════════════════════════════════════════"
 
 b1 = "██████╗ ███████╗ █████╗  ██████╗████████╗  ██╗  ██╗███████╗███████╗      ███████╗ ██████╗ █████╗ ███╗   ██╗███╗   ██╗███████╗██████╗"
 b2 = "██╔══██╗██╔════╝██╔══██╗██╔════╝╚══██╔══╝  ╚██╗██╔╝██╔════╝██╔════╝      ██╔════╝██╔════╝██╔══██╗████╗  ██║████╗  ██║██╔════╝██╔══██╗"
@@ -21,7 +21,7 @@ b9 = "\n        Github -- " + github + "\n"
 b10 = separation + "\n"
 
 def output_banner():	
-	for b in [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10]:
-		colorized_print(b,colors_list.CYAN)
+	for i, b in enumerate([b1, b2, b3, b4, b5, b6, b7, b8, b9, b10]):
+		colorized_print(b,colors_list.CYAN if i <= 5 else colors_list.MAGENTA)
 
 		time.sleep(interbal)
