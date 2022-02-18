@@ -5,7 +5,7 @@ from src.banner import output_banner
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-rootPath = "."
+rootPath = ".."
 
 def main():
 	output_banner()
