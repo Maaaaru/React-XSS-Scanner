@@ -6,8 +6,8 @@ exclude_dir = [".git", ".."]
 target_file = [".js", ".jsx",".ts",".tsx"]
 dangerous = ["javascript:","dangerouslySetInnerHTML("]
 
-def output_result(result, path):
-	if (result):
+def print_result(is_denger, path):
+	if (is_denger):
 		colorized_print("\n[ ! ] dangerous code found in " + path, colors_list.RED)
 	else:
 		colorized_print("[ - ] dangerous code not found", colors_list.GREEN)
@@ -18,7 +18,7 @@ def scan_file(path):
 			line = line.rstrip()
 			result = any(s in line for s in dangerous)
 
-			output_result(result, path)
+			print_result(result, path)
 
 def scan_dir(path):
 	with os.scandir(path) as list:
