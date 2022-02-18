@@ -1,6 +1,7 @@
 import time
+from src.util.printer import colors_list, colorized_print
 
-interbal = 8 / 100
+interbal = 1 / 10
 author = "Maaaaru"
 github = "https://github.com/Maaaaru/React-XSS-Scanner"
 version = "v1.0.0"
@@ -20,6 +21,9 @@ b10 = separation + "\n"
 
 def output_banner():	
 	for b in [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10]:
-		print(b)
+		colorized_print(b,colors_list.CYAN)
 
 		time.sleep(interbal)
+
+def output_start_scanning():
+	colorized_print("[ + ] Start Scanning ... \n", colors_list.GREEN)
