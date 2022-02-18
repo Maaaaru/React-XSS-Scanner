@@ -1,7 +1,8 @@
 
 import os
-import src.scan as s
-from src.banner import output_banner,output_start_scanning
+from src.scan import scan_dir
+from src.banner import output_banner
+from src.util.printer import output_start_scanning, print_finish
 
 rootPath = "."
 
@@ -10,6 +11,8 @@ def main():
 
 	output_start_scanning()
 
-	s.scan_dir(rootPath)
+	scan_dir(rootPath)
+
+	print_finish()
 
 main()

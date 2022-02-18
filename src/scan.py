@@ -1,5 +1,6 @@
 import os
-from src.util.printer import colors_list,colorized_print
+from src.util.printer import colorized_print
+from src.color import colors_list
 
 exclude_dir = [".git", ".."]
 target_file = [".js", ".jsx",".ts",".tsx"]
@@ -7,9 +8,9 @@ dangerous = ["javascript:","dangerouslySetInnerHTML("]
 
 def output_result(result, path):
 	if (result):
-		colorized_print("[ + ] dangerous code found in " + path, colors_list.RED)
+		colorized_print("\n[ ! ] dangerous code found in " + path, colors_list.RED)
 	else:
-		colorized_print("[ + ] dangerous code not found", colors_list.GREEN)
+		colorized_print("[ - ] dangerous code not found", colors_list.GREEN)
 
 def scan_file(path):
 	with open(path) as f:
