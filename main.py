@@ -18,10 +18,14 @@ def main():
 
 def print_report(vulnerable_files):
 
+	colorized_print("\n--------------------------------------------------------------------", colors_list.WHITE)
 	colorized_print("\n★★ Scan Finish!! ★★", colors_list.GREEN)
 
-	colorized_print("\n" + "found " + str(len(vulnerable_files)) + " vulnerable file (the detailed file path is as below)", colors_list.GREEN if len(vulnerable_files) is 0 else colors_list.RED)
-
+	if len(vulnerable_files) > 0:
+		colorized_print("\n" + "found " + str(len(vulnerable_files)) + " vulnerable file (the detailed file path is as below)", colors_list.GREEN if len(vulnerable_files) is 0 else colors_list.RED)
+	else:
+		colorized_print("\nvulnerable file not found\n", colors_list.GREEN)
+		
 	print_vulnerable_files_path(vulnerable_files)
 
 
