@@ -10,7 +10,7 @@ vulnerable_files = []
 def scan_file(path):
 	vulnerable_code_line_number = []
 
-	colorized_print("\n >> Scanning " + path, colors_list.WHITE)
+	colorized_print("\n >> Scanning " + path, colors_list.DARK_GRAY)
 
 	with open(path) as f:
 		for line_number, code in enumerate(f, 1):
@@ -23,7 +23,7 @@ def scan_file(path):
 				colorized_print("\n  [ ! ] vulnerable code found", colors_list.RED)
 
 	if (len(vulnerable_code_line_number) is 0):
-		colorized_print("\n  [ - ] vulnerable code not found ", colors_list.GREEN)
+		colorized_print("\n  [ ✔︎ ] vulnerable code not found ", colors_list.GREEN)
 	else:
 		return vulnerable_files.append([path,vulnerable_code_line_number])
 
