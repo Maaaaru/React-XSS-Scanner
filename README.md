@@ -16,6 +16,9 @@ This scanner for vulnerabilities in React code. (.ts, .tsx, .js, .jsx)
 # What is this
 This tool scans files for the presence of dangerous functions that can cause XSS.
 
+# Why React-XSS-Scanner?
+There are many tools that inject xss payloads into specified URLs, but I couldn't find many tools that scan for dangerous code that could cause xss, so I created this one.
+
 
 # Instalation
 
@@ -29,8 +32,16 @@ $ git clone https://github.com/Maaaaru/React-XSS-Scanner.git
 
 ```
 $ cd React-XSS-Scanner
-$ python3 main.py
+$ python3 main.py --path ../
 ```
+
+# Flags
+| Flag | Description |
+| ----| --- |
+| --help (or -h) | help message |
+| --path (or -P) | Directly path to scan. The default path is specified as the directly above the current directly. |
+
+There are currently only two flags, but more will be added in the future, including output to files.
 
 # ※ Caution
 The scan results will pick up functions that may cause XSS, so the presence of dangerous code does not necessarily mean that XSS will occur.
