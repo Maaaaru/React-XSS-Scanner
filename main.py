@@ -5,7 +5,6 @@ from src.banner import output_banner
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-default_scan_path = ".."
 
 def main(scan_path):
 	output_banner()
@@ -42,8 +41,8 @@ def print_vulnerable_files_path(vulnerable_files):
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser("React XSS Scanner")
 
-	parser.add_argument('--path', '-P', help='Directly path to scan')
+	parser.add_argument('--path', '-P', default="..", help='Directly path to scan')
 
 	args = parser.parse_args()
 
-	main(args.path if args.path else default_scan_path)
+	main(args.path)
