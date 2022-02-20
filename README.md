@@ -30,6 +30,8 @@ $ git clone https://github.com/Maaaaru/React-XSS-Scanner.git
 
 # Start Scan
 
+<img src="docs/imgs/scan_demo.png" width="800">
+
 ```
 $ cd React-XSS-Scanner
 $ python3 main.py --path ../
