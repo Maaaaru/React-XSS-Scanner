@@ -4,7 +4,7 @@ from src.color import colors_list
 
 exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin", ".vscode", ".storybook", "dist"]
 target_file = [".js", ".jsx", ".ts", ".tsx"]
-dangerous = ["javascript:", "dangerouslySetInnerHTML(", "eval("]
+dangerous = ["href={`javascript:${", "dangerouslySetInnerHTML(", "eval("]
 vulnerable_files = []
 
 def scan_file(path):
