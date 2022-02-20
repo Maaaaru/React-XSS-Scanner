@@ -17,15 +17,13 @@ def main():
 	print_report(vulnerable_files)
 
 def print_report(vulnerable_files):
-	colorized_print("\n═════════════════════════════════════════════════════════════════ <<", colors_list.WHITE)
 
-	colorized_print("\n   ★★ Scan Finish!! ★★", colors_list.GREEN)
+	colorized_print("\n★★ Scan Finish!! ★★", colors_list.GREEN)
 
-	colorized_print("\n   " + str(len(vulnerable_files)) + " vulnerable file found (the detailed file path is as below)", colors_list.GREEN if len(vulnerable_files) is 0 else colors_list.RED)
+	colorized_print("\n" + "found " + str(len(vulnerable_files)) + " vulnerable file (the detailed file path is as below)", colors_list.GREEN if len(vulnerable_files) is 0 else colors_list.RED)
 
 	print_vulnerable_files_path(vulnerable_files)
 
-	colorized_print("\n═════════════════════════════════════════════════════════════════ <<", colors_list.WHITE)
 
 def print_vulnerable_files_path(vulnerable_files):
 	for i in vulnerable_files:
