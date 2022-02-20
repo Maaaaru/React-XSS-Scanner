@@ -12,9 +12,12 @@ def main():
 
 	colorized_print("[ + ] Start Scanning ...", colors_list.GREEN)
 
-	vulnerable_files = scan_dir(rootPath)
+	try:
+		vulnerable_files = scan_dir(rootPath)
 
-	print_report(vulnerable_files)
+		print_report(vulnerable_files)
+	except:
+		colorized_print("\nAn unknown error has occurred...  Please try again later", colors_list.RED)
 
 def print_report(vulnerable_files):
 
@@ -33,6 +36,6 @@ def print_vulnerable_files_path(vulnerable_files):
 	for i in vulnerable_files:
 		file_path = i[0]
 		for l in i[1]:
-			colorized_print("\n       >>> " + file_path + " at line " + str(l), colors_list.RED)
+			colorized_print("\n  >>> " + file_path + " at line " + str(l), colors_list.RED)
 
 main()
