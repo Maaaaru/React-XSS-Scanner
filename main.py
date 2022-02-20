@@ -5,21 +5,18 @@ from src.banner import output_banner
 from src.util.printer import colorized_print
 from src.color import colors_list
 
-rootPath = ".."
+rootPath = "."
 
 def main():
 	output_banner()
 
-	print_start_scan()
+	colorized_print("[ + ] Start Scanning ...", colors_list.GREEN)
 
 	vulnerable_files = scan_dir(rootPath)
 
-	print_scan_result(vulnerable_files)
+	print_report(vulnerable_files)
 
-def print_start_scan():
-	colorized_print("[ + ] Start Scanning ...", colors_list.GREEN)
-
-def print_scan_result(vulnerable_files):
+def print_report(vulnerable_files):
 	colorized_print("\n═════════════════════════════════════════════════════════════════ <<", colors_list.WHITE)
 
 	colorized_print("\n   ★★ Scan Finish!! ★★", colors_list.GREEN)
