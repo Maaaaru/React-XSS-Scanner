@@ -38,10 +38,10 @@ $ python3 main.py --path ../
 ```
 
 # Flags
-| Flag | Description |
-| ----| --- |
-| --help (or -h) | help message |
-| --path (or -P) | Directly path to scan. The default path is specified as the directly above the current directly. |
+| Long Form | Short Form | Description |
+| ----| ---- | ---- |
+| --help | -h | help message |
+| --path | -P | Directly path to scan. The default path is specified as the directly above the current directly. |
 
 There are currently only two flags, but more will be added in the future, including output to files.
 
