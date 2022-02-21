@@ -14,11 +14,11 @@ def main(scan_path):
 	try:
 		vulnerable_files = scan_dir(scan_path)
 
-		print_report(vulnerable_files)
+		output_report(vulnerable_files)
 	except:
 		colorized_print("\nAn unknown error has occurred...  Please try again later", colors_list.RED)
 
-def print_report(vulnerable_files):
+def output_report(vulnerable_files):
 
 	colorized_print("\n--------------------------------------------------------------------", colors_list.WHITE)
 	colorized_print("\n★★ Scan Finish!! ★★", colors_list.GREEN)
@@ -28,10 +28,10 @@ def print_report(vulnerable_files):
 	else:
 		colorized_print("\nvulnerable file not found\n", colors_list.GREEN)
 		
-	print_vulnerable_files_path(vulnerable_files)
+	output_vulnerable_files_path(vulnerable_files)
 
 
-def print_vulnerable_files_path(vulnerable_files):
+def output_vulnerable_files_path(vulnerable_files):
 	for i in vulnerable_files:
 		file_path = i[0]
 		for l in i[1]:
