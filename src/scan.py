@@ -1,4 +1,6 @@
 import os
+import re
+
 from src.util.printer import colorized_print
 from src.color import colors_list
 
@@ -6,6 +8,9 @@ exclude_dir = [".git", "..", "__test__",".github", "docs", ".bin", ".vscode", ".
 target_file = [".js", ".jsx", ".ts", ".tsx"]
 dangerous = ["href={`javascript:${", "dangerouslySetInnerHTML(", "eval("]
 vulnerable_files = []
+
+def validate_commentout(code):
+	return re.match('(\/)(?:\*[\s\S]*?\*\/|\/.*)', code)
 
 def scan_file(path):
 	vulnerable_code_line_number = []
@@ -15,7 +20,7 @@ def scan_file(path):
 	with open(path) as f:
 		for line_number, code in enumerate(f, 1):
 
-			result = any(s in code for s in dangerous)
+			result = not validate_commentout(code) and any(s in code for s in dangerous)
 
 			if result:
 				vulnerable_code_line_number.append(line_number)
